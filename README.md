@@ -1,4 +1,12 @@
-# En clase ya sirve el bono:
+## Ya sirve el postman (adjunto la reseña porque depende del resto de endpoints)
+
+![image](https://github.com/user-attachments/assets/520bc1b7-abe1-4cd4-95c4-bc9a3d860dc2)
+
+
+Ya todo debería estar corriendo y funcionando bien 👍
+
+
+## En clase ya sirve el bono:
 
 <img width="270" alt="image" src="https://github.com/user-attachments/assets/d8115a93-825d-4737-818d-ac7f32ad8de2" />
 
