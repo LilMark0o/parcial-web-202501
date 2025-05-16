@@ -1,0 +1,1017 @@
+{
+	"info": {
+		"_postman_id": "c8485e5e-e5d9-4cbf-a337-e36288b93150",
+		"name": "Parcial Web 202510",
+		"description": "Documentacion todos los endpoints sirviendo del parcial 2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29051645",
+		"_collection_link": "https://speeding-space-692344.postman.co/workspace/ArquiSw~ad77a004-278a-44d3-9e09-ed562659c928/collection/29051645-c8485e5e-e5d9-4cbf-a337-e36288b93150?action=share&source=collection_link&creator=29051645"
+	},
+	"item": [
+		{
+			"name": "Estudiantes",
+			"item": [
+				{
+					"name": "Crear Estudiante",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cedula\": 1234567890,\n    \"nombre\": \"Marco Alejandro Ramírez Camacho\",\n    \"correo\": \"marcoalejandroramirezc@gmail.com\",\n    \"programa\": \"Ingeniería de Sistemas\",\n    \"semestre\": 8\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3002/estudiantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"estudiantes"
+							]
+						},
+						"description": "Crea un nuevo estudiante en el sistema"
+					},
+					"response": [
+						{
+							"name": "Creación exitosa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cedula\": 1234567890,\n    \"nombre\": \"Marco Alejandro Ramírez Camacho\",\n    \"correo\": \"marcoalejandroramirezc@gmail.com\",\n    \"programa\": \"Ingeniería de Sistemas\",\n    \"semestre\": 8\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/estudiantes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estudiantes"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"cedula\": 1234567890,\n    \"nombre\": \"Marco Alejandro Ramírez Camacho\",\n    \"correo\": \"marcoalejandroramirezc@gmail.com\",\n    \"programa\": \"Ingeniería de Sistemas\",\n    \"semestre\": 8\n}"
+						},
+						{
+							"name": "Error de validación",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cedula\": 1234567890,\n    \"nombre\": \"Marco Alejandro Ramírez Camacho\",\n    \"correo\": \"correo-invalido\",\n    \"programa\": \"Ingeniería de Sistemas\",\n    \"semestre\": 12\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/estudiantes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estudiantes"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"El correo electrónico no es válido\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar Estudiante por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/estudiantes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"estudiantes",
+								"1"
+							]
+						},
+						"description": "Obtiene un estudiante por su ID"
+					},
+					"response": [
+						{
+							"name": "Búsqueda exitosa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/estudiantes/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estudiantes",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"cedula\": 1234567890,\n    \"nombre\": \"Marco Alejandro Ramírez Camacho\",\n    \"correo\": \"marcoalejandroramirezc@gmail.com\",\n    \"programa\": \"Ingeniería de Sistemas\",\n    \"semestre\": 8,\n    \"actividades\": [],\n    \"reseñas\": []\n}"
+						},
+						{
+							"name": "Estudiante no encontrado",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/estudiantes/999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estudiantes",
+										"999"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Estudiante con ID 999 no encontrado\",\n    \"error\": \"Not Found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Inscribir Estudiante en Actividad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"actividadId\": 9\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3002/estudiantes/3/actividades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"estudiantes",
+								"3",
+								"actividades"
+							]
+						},
+						"description": "Inscribe a un estudiante en una actividad cultural"
+					},
+					"response": [
+						{
+							"name": "Inscripción exitosa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"actividadId\": 1\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/estudiantes/1/actividades",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estudiantes",
+										"1",
+										"actividades"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensaje\": \"Inscripción exitosa\",\n    \"estudiante\": {\n        \"id\": 1,\n        \"nombre\": \"Marco Alejandro Ramírez Camacho\"\n    },\n    \"actividad\": {\n        \"id\": 1,\n        \"titulo\": \"Taller de Programacion Web Avanzada\"\n    }\n}"
+						},
+						{
+							"name": "Actividad no disponible",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"actividadId\": 2\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/estudiantes/1/actividades",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"estudiantes",
+										"1",
+										"actividades"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"La actividad no está abierta para inscripciones\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Endpoints relacionados con la gestión de estudiantes"
+		},
+		{
+			"name": "Actividades",
+			"item": [
+				{
+					"name": "Crear Actividad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Taller de Programacion Web Avanzada\",\n    \"fecha\": \"2025-05-20\",\n    \"cupoMaximo\": 2,\n    \"estado\": 0\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3002/actividades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"actividades"
+							]
+						},
+						"description": "Crea una nueva actividad cultural"
+					},
+					"response": [
+						{
+							"name": "Creación exitosa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"titulo\": \"Taller de Programacion Web Avanzada\",\n    \"fecha\": \"2025-05-20\",\n    \"cupoMaximo\": 30,\n    \"estado\": 0\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/actividades",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"actividades"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"titulo\": \"Taller de Programacion Web Avanzada\",\n    \"fecha\": \"2025-05-20\",\n    \"cupoMaximo\": 30,\n    \"estado\": 0\n}"
+						},
+						{
+							"name": "Error de validación",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"titulo\": \"Corto\",\n    \"fecha\": \"2025-05-20\",\n    \"cupoMaximo\": 30,\n    \"estado\": 0\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/actividades",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"actividades"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"El título debe tener al menos 15 caracteres\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar Actividad por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/actividades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"actividades",
+								"1"
+							]
+						},
+						"description": "Obtiene una actividad por su ID"
+					},
+					"response": [
+						{
+							"name": "Búsqueda exitosa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/actividades/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"actividades",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"titulo\": \"Taller de Programacion Web Avanzada\",\n    \"fecha\": \"2025-05-20\",\n    \"cupoMaximo\": 30,\n    \"estado\": 0,\n    \"inscritos\": [],\n    \"reseñas\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar Actividades por Fecha",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/actividades/fecha/2025-05-20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"actividades",
+								"fecha",
+								"2025-05-20"
+							]
+						},
+						"description": "Obtiene todas las actividades para una fecha específica"
+					},
+					"response": [
+						{
+							"name": "Búsqueda exitosa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/actividades/fecha/2025-05-20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"actividades",
+										"fecha",
+										"2025-05-20"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"titulo\": \"Taller de Programacion Web Avanzada\",\n        \"fecha\": \"2025-05-20\",\n        \"cupoMaximo\": 30,\n        \"estado\": 0,\n        \"inscritos\": [],\n        \"reseñas\": []\n    },\n    {\n        \"id\": 2,\n        \"titulo\": \"Conferencia de Inteligencia Artificial\",\n        \"fecha\": \"2025-05-20\",\n        \"cupoMaximo\": 100,\n        \"estado\": 0,\n        \"inscritos\": [],\n        \"reseñas\": []\n    }\n]"
+						},
+						{
+							"name": "Sin actividades",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/actividades/fecha/2025-06-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"actividades",
+										"fecha",
+										"2025-06-01"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "Cambiar Estado de Actividad",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"estado\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3002/actividades/9/estado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"actividades",
+								"9",
+								"estado"
+							]
+						},
+						"description": "Cambia el estado de una actividad (0=abierta, 1=cerrada, 2=finalizada)"
+					},
+					"response": [
+						{
+							"name": "Cambio exitoso",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"estado\": 1\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/actividades/1/estado",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"actividades",
+										"1",
+										"estado"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"titulo\": \"Taller de Programacion Web Avanzada\",\n    \"fecha\": \"2025-05-20\",\n    \"cupoMaximo\": 30,\n    \"estado\": 1,\n    \"inscritos\": []\n}"
+						},
+						{
+							"name": "No se cumplen las condiciones",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"estado\": 1\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/actividades/2/estado",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"actividades",
+										"2",
+										"estado"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"La actividad solo puede ser cerrada si el 80% del cupo está lleno\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Endpoints relacionados con la gestión de actividades culturales"
+		},
+		{
+			"name": "Reseñas",
+			"item": [
+				{
+					"name": "Crear Reseña",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Estado de respuesta es 201 Created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"Respuesta incluye id autogenerado\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.id).to.exist;",
+									"});",
+									"",
+									"pm.test(\"Los datos de la reseña son correctos\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.comentario).to.eql(\"Excelente taller, muy informativo y práctico\");",
+									"    pm.expect(jsonData.calificacion).to.eql(5);",
+									"    pm.expect(jsonData.fecha).to.eql(\"2025-05-25\");",
+									"    pm.expect(jsonData.estudiante).to.exist;",
+									"    pm.expect(jsonData.actividad).to.exist;",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3002/resenas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"resenas"
+							]
+						},
+						"description": "Crea una nueva reseña para una actividad"
+					},
+					"response": [
+						{
+							"name": "Creación exitosa",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comentario\": \"Excelente taller, muy informativo y práctico\",\n    \"calificacion\": 5,\n    \"fecha\": \"2025-05-25\",\n    \"estudianteId\": 1,\n    \"actividadId\": 1\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/resenas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"resenas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"comentario\": \"Excelente taller, muy informativo y práctico\",\n    \"calificacion\": 5,\n    \"fecha\": \"2025-05-25\",\n    \"estudiante\": {\n        \"id\": 1,\n        \"nombre\": \"Marco Alejandro Ramírez Camacho\"\n    },\n    \"actividad\": {\n        \"id\": 1,\n        \"titulo\": \"Taller de Programacion Web Avanzada\"\n    }\n}"
+						},
+						{
+							"name": "Actividad no finalizada",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"comentario\": \"Excelente taller, muy informativo y práctico\",\n    \"calificacion\": 5,\n    \"fecha\": \"2025-05-25\",\n    \"estudianteId\": 1,\n    \"actividadId\": 2\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3002/resenas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"resenas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Solo se pueden agregar reseñas a actividades finalizadas\",\n    \"error\": \"Bad Request\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar Reseña por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3002/resenas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"resenas",
+								"1"
+							]
+						},
+						"description": "Obtiene una reseña por su ID"
+					},
+					"response": [
+						{
+							"name": "Búsqueda exitosa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/resenas/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"resenas",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"comentario\": \"Excelente taller, muy informativo y práctico\",\n    \"calificacion\": 5,\n    \"fecha\": \"2025-05-25\",\n    \"estudiante\": {\n        \"id\": 1,\n        \"nombre\": \"Marco Alejandro Ramírez Camacho\",\n        \"correo\": \"marcoalejandroramirezc@gmail.com\"\n    },\n    \"actividad\": {\n        \"id\": 1,\n        \"titulo\": \"Taller de Programacion Web Avanzada\",\n        \"fecha\": \"2025-05-20\"\n    }\n}"
+						},
+						{
+							"name": "Reseña no encontrada",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3002/resenas/999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3002",
+									"path": [
+										"resenas",
+										"999"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Reseña con ID 999 no encontrada\",\n    \"error\": \"Not Found\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Endpoints relacionados con las reseñas de actividades"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
