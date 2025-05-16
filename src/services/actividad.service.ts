@@ -13,12 +13,10 @@ export class ActividadService {
   ) {}
 
   async crearActividad(createActividadDto: CreateActividadDto): Promise<Actividad> {
-    // Validar longitud mínima del título
     if (createActividadDto.titulo.length < 15) {
       throw new BadRequestException('El título debe tener al menos 15 caracteres');
     }
 
-    // Validar que el título no contenga símbolos (solo letras, números y espacios)
     const tituloRegex = /^[a-zA-Z0-9\s]+$/;
     if (!tituloRegex.test(createActividadDto.titulo)) {
       throw new BadRequestException('El título no puede contener símbolos');

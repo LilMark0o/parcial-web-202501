@@ -1,4 +1,3 @@
-
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
 import { Estudiante } from './estudiante.entity';
 import { Actividad } from './actividad.entity';

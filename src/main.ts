@@ -12,6 +12,7 @@ async function bootstrap() {
     transform: true,
   }));
   
+  // me sirve más usar este puerto, el normal lo tengo ocupado con otro proyecto jeje
   const configService = app.get(ConfigService);
   const port = configService.get<number>('PORT', 3002);
   

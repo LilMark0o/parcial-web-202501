@@ -1,4 +1,3 @@
-
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, OneToMany } from 'typeorm';
 import { Estudiante } from './estudiante.entity';
 import { Reseña } from './resena.entity';

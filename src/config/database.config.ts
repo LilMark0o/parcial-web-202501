@@ -1,7 +1,9 @@
+// Esto lo saqué del proyecto jejeje
+
 import { registerAs } from '@nestjs/config';
 
 export default registerAs('database', () => ({
-  type: 'postgres' as const, // Especificar como const para que TypeScript lo reconozca como literal
+  type: 'postgres' as const,
   host: process.env.DB_HOST || 'localhost',
   port: process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 5432,
   username: process.env.DB_USERNAME || 'postgres',
