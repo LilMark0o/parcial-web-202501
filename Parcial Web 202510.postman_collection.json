@@ -5,7 +5,7 @@
 		"description": "Documentacion todos los endpoints sirviendo del parcial 2025",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29051645",
-		"_collection_link": "https://speeding-space-692344.postman.co/workspace/ArquiSw~ad77a004-278a-44d3-9e09-ed562659c928/collection/29051645-c8485e5e-e5d9-4cbf-a337-e36288b93150?action=share&source=collection_link&creator=29051645"
+		"_collection_link": "https://speeding-space-692344.postman.co/workspace/ad77a004-278a-44d3-9e09-ed562659c928/collection/29051645-c8485e5e-e5d9-4cbf-a337-e36288b93150?action=share&source=collection_link&creator=29051645"
 	},
 	"item": [
 		{
@@ -247,10 +247,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"actividadId\": 9\n}"
+							"raw": "{\n    \"actividadId\": 10\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3002/estudiantes/3/actividades",
+							"raw": "http://localhost:3002/estudiantes/4/actividades",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -258,7 +258,7 @@
 							"port": "3002",
 							"path": [
 								"estudiantes",
-								"3",
+								"4",
 								"actividades"
 							]
 						},
@@ -802,7 +802,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n    \"comentario\": \"Excelente taller, muy informativo y práctico\",\n    \"calificacion\": 5,\n    \"fecha\": \"2025-05-25\",\n    \"estudianteId\": 3,\n    \"actividadId\": 9\n}\n"
 						},
 						"url": {
 							"raw": "http://localhost:3002/resenas",
