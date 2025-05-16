@@ -13,6 +13,8 @@ export class ActividadService {
   ) {}
 
   async crearActividad(createActividadDto: CreateActividadDto): Promise<Actividad> {
+
+    const { estado, ...data} = createActividadDto;
     if (createActividadDto.titulo.length < 15) {
       throw new BadRequestException('El título debe tener al menos 15 caracteres');
     }
@@ -25,7 +27,7 @@ export class ActividadService {
     // Crear actividad con estado 0 (abierta) por defecto
     const actividad = this.actividadRepository.create({
       ...createActividadDto,
-      estado: 0,
+      estado: estado,
     });
 
     return this.actividadRepository.save(actividad);

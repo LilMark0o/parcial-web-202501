@@ -18,6 +18,8 @@ export class EstudianteController {
     return this.estudianteService.findEstudianteById(id);
   }
 
+// ACA ESTA EL ENDPONT DEL BONO (cree el resto para salir de eso de una vez)
+
   @Post(':id/actividades')
   @HttpCode(HttpStatus.OK)
   async inscribirseActividad(

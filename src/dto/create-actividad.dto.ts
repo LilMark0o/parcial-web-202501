@@ -9,4 +9,7 @@ export class CreateActividadDto {
 
   @IsInt()
   cupoMaximo: number;
+
+  @IsInt()
+  estado: number;
 }
